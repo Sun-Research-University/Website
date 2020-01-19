@@ -1,0 +1,41 @@
+/* style made by isaac#1442 on discord */
+/* Modifications and extra stuff made by me */
+  body {
+		position: relative;
+		background-image: url(https://cdn.sunthecourier.net/res/bg.png) !important;
+		padding: 100px;
+		min-height: 420px;
+	}
+
+	.text-box {
+		border-radius: 15px;
+		/* box-shadow: 0px 5px 3px rgba(255, 255, 255, 0.5); */
+		font-family: Helvetica, Arial, sans-serif;
+		background: rgba(0, 0, 0, 0.8);
+		color: white;
+		/* text-align: center;*/
+		padding: 10px;
+		min-height: 20px;
+	}
+
+  .navi {
+    font-size: 30px;
+  }
+
+  .center {
+    margin: 0 auto; 
+    display: table;
+    text-align: center
+  }
+
+  a:link {
+    color: rgb(45, 120, 237);
+  }
+
+  a:visited{
+    color: rgb(45, 120, 237);
+  }
+
+  a:hover {
+  color: rgb(35, 83, 160);
+}
