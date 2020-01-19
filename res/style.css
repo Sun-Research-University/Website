@@ -2,7 +2,7 @@
 /* Modifications and extra stuff made by me */
   body {
 		position: relative;
-		background-image: url(https://cdn.sunthecourier.net/res/bg.png) !important;
+		background-image: url(bg.png) !important;
 		padding: 100px;
 		min-height: 420px;
 	}
