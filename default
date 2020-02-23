@@ -1,0 +1,55 @@
+# HTTP and WWW are handled by cloudflare
+server {
+	# SSL configuration
+	listen 443 ssl default_server;
+	ssl        on;
+	ssl_certificate         /etc/ssl/certs/cert.pem;
+	ssl_certificate_key     /etc/ssl/private/key.pem;
+
+	root /var/www/html;
+
+	index index.php index.html;
+
+	server_name www.sunthecourier.net;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+	}
+
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+	}
+}
+
+server {
+	# SSL configuration
+	#
+	listen 443 ssl;
+	ssl        on;
+	ssl_certificate         /etc/ssl/certs/cert.pem;
+	ssl_certificate_key     /etc/ssl/private/key.pem;
+	root					/storage/downloads;
+	server_name downloads.sunthecourier.net;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+
+server {
+	# SSL configuration
+	#
+	listen 443 ssl;
+	ssl        on;
+	ssl_certificate         /etc/ssl/certs/cert.pem;
+	ssl_certificate_key     /etc/ssl/private/key.pem;
+	root					/storage/files;
+	server_name files.sunthecourier.net;
+
+	location / {
+		autoindex on;
+	}
+}
